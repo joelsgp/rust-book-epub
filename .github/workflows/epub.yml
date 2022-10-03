@@ -7,16 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
+        uses: actions/checkout@v3
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
         with:
           profile: minimal
           toolchain: stable
           override: true
-      - uses: actions-rs/cargo@v1
+      - name: Install mdbook-epub
+        uses: actions-rs/cargo@v1
         with:
           command: install
           args: --git https://github.com/Michael-F-Bryan/mdbook-epub mdbook-epub
+      - name: Add mdbook to PATH
+        run: echo "${HOME}/.cargo/bin" >> ${GITHUB_PATH}
       - name: Build
         run: mdbook build
       - name: Test
