@@ -1,8 +1,7 @@
 name: EPUB
 
 on:
-  push:
-    tags: '*'
+  create
 
 jobs:
   build:
