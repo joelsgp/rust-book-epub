@@ -15,6 +15,10 @@ mdbook-epub --standalone
 ```
 The output will be in `book/epub/`.
 
+P.S. if you fork this then you're going to want to disable the regular CI, it will error since it uses the modified book.toml but doesn't install mdbook-epub.
+
+## Back to your regularly scheduled readme
+
 ![Build Status](https://github.com/rust-lang/book/workflows/CI/badge.svg)
 
 This repository contains the source of "The Rust Programming Language" book.
