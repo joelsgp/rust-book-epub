@@ -1,5 +1,20 @@
 # The Rust Programming Language
 
+## EPUB builds
+
+This fork has a [github action](.github/workflows/epub.yml) to build and release the latest tag with an epub.
+
+Get the latest one here: https://github.com/joelsgp/rust-book-epub/releases
+
+To build manually:
+```sh
+# install Rust first
+# and add cargo's directory to your PATH or use ~/.cargo/bin/mdbook-epub
+cargo install --git https://github.com/Michael-F-Bryan/mdbook-epub mdbook-epub
+mdbook-epub --standalone
+```
+The output will be in `book/epub/`.
+
 ![Build Status](https://github.com/rust-lang/book/workflows/CI/badge.svg)
 
 This repository contains the source of "The Rust Programming Language" book.
